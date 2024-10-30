@@ -56,6 +56,12 @@ app.post('/artistas', async ( req, res) => {
     res.status(201).json(artistaSalvo);
 })
 
+app.post('/generos', async (req, res) => {
+    const novoGenero = new genero(req.body);
+    const generoSalvo = await novoGenero.save();
+    res.status(201).json(generoSalvo);
+});
+
 app.delete('/artistas/:id', async (req, res) => {
     const { id } = req.params;
     await artistas.findByIdAndDelete(id);
