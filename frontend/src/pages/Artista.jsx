@@ -49,6 +49,7 @@ export default function Artista() {
                 <h1 className="text-7xl font-bold">{artista.name}</h1>
             </div>
             <p>{artista.bio}</p>
+            <img src={artista.image} alt="" />
           </>
         }
         </div>
