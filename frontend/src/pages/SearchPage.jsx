@@ -9,23 +9,23 @@ export default function SearchPage() {
     const [searchResults, setSearchResults] = useState([])
 
     useEffect(() => {
-        fetch(`https://spotify-deploy-api.vercel.app/search/${search}`)
-        .then(response => response.json())
-        .then(data => setSearchResults(data))
-        .catch(error => console.log(error))
+        fetch(`https://spoti-tui-eah9.vercel.app/search/${search}`)
+            .then(response => response.json())
+            .then(data => setSearchResults(data))
+            .catch(error => console.log(error))
     }, [search])
 
     return (
-         <div className="bg-gray-900 rounded-lg w-8/12 p-8">
+        <div className="bg-gray-900 rounded-lg w-8/12 p-8">
             <SliderCards titulo="Resultados da busca">
-            {
-                searchResults.length > 0 ?
-                    searchResults.map( resultado => (
-                        <Card key={resultado._id} {...resultado}/>
-                    ))
-                :
-                <h1 className="text-white text-xl mt-5">Infelizmente seu artista ainda não está no nosso site 😭</h1>
-            }
+                {
+                    searchResults.length > 0 ?
+                        searchResults.map(resultado => (
+                            <Card key={resultado._id} {...resultado} />
+                        ))
+                        :
+                        <h1 className="text-white text-xl mt-5">Infelizmente seu artista ainda não está no nosso site 😭</h1>
+                }
             </SliderCards>
         </div>
     )

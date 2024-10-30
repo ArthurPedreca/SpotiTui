@@ -14,7 +14,7 @@ export default function Artista() {
         setIsLoading(true);
             const puxarArtista = async () => {
         try{
-            const artista = await fetch(`https://spotify-deploy-api.vercel.app/artistas/${id}`);
+            const artista = await fetch(`https://spoti-tui-eah9.vercel.app/artistas/${id}`);
             const resposta = await artista.json();
             setArtista(resposta);
             }
